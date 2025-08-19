@@ -2,6 +2,10 @@
 
 ---
 
+<img src="Cython.png" alt="Program Icon" width="250" height="250">
+
+---
+
 ### Why This Build System Helps Your Project?
 
 - **This setup makes your workflow faster, cleaner, and more professional. Instead of manually rebuilding every time, everything is automated and reusable.**
