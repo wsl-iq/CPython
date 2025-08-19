@@ -50,7 +50,15 @@
 
 ---
 
-### How Installation
+### **How Installation**
+
+[![Download Python](https://img.shields.io/badge/Download-Python-blue?logo=python&logoColor=white)](https://www.python.org/ftp/python/3.13.7/python-3.13.7-amd64.exe) 
+
+**`Version Python -> 3.13.7`**
+
+---
+
+[![Visual Studio](https://custom-icon-badges.demolab.com/badge/MicroSoft_C++_Build%20Tools-Build_Tool-5C2D91.svg?&logo=visual-studio&logoColor=white)](https://aka.ms/vs/17/release/vs_BuildTools.exe)
 
 ```
 $ MicroSoft C++ BuildTools.exe
@@ -127,7 +135,7 @@ os.system(f'python dll.py')
 
 ---
 
-| Windows | Linux | MacBook |
+| ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black) | ![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0) |
 |---------|-------|---------|
 |   ✅   |   ❌  |   ❌   |
 
