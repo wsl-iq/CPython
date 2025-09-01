@@ -100,6 +100,16 @@ $ MicroSoft C++ BuildTools.exe
 pip install -r requirements.txt
 ```
 
+---
+
+### **OR**
+
+```
+$ requirements.cmd
+```
+
+---
+
 ### **Run**
 
 ```
