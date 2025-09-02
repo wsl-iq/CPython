@@ -3,11 +3,13 @@ chcp 65001 >nul
 setlocal enabledelayedexpansion
 cls
 
+:: تعريف الألوان
 for %%A in (31 32 33 34 35 36 37) do (
     set "color[%%A]=[%%A;1m"
 )
 set "color[0]=[0m"
 
+:: الواجهة
 echo ┏───────────────────────────────────┓
 echo ┃ !color[31]!●!color[0]! !color[33]!●!color[0]! !color[32]!●!color[0]!                             ┃
 echo ┣────────────┳──────────────────────┫
@@ -16,6 +18,7 @@ echo ┃ Copyright  ^| Copyright (c) 2025   ┃
 echo ┗────────────┻──────────────────────┛ !color[0]!
 echo.
 
+:: تثبيت المكتبات
 set PYTHON_CMD=python
 
 if exist requirements.txt (
@@ -36,4 +39,3 @@ echo !color[32]![INFO]!color[0]! Installing default libraries...
 echo.
 echo !color[32]![INFO]!color[0]! All done successfully.
 pause
-

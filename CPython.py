@@ -133,7 +133,7 @@ class Main:
 ┃{B} Developer  {W}│ {__Developer__}{W}    ┃
 ┃{B} Copyright  {W}│ {__Copyright__}{W}   ┃
 ┗────────────┻──────────────────────┛""")
-            ApplacationStart = time.time()
+            ApplicationStart = time.time()
             
             os.system("python setup.py build_ext --inplace")
             python_version = f"cp{sys.version_info.major}{sys.version_info.minor}"
@@ -148,13 +148,12 @@ class Main:
             dll_path = os.path.abspath("mylib.dll")
             print(f"Created DLL at: {dll_path}")
             os.system(f'python dll.py')
-            
-            ApplacationDuration = time.time() - ApplacationStart
 
-            print(f"\n{Y}Ran for: {ApplacationDuration:.2f} seconds{W}")
+            ApplicationDuration = time.time() - ApplicationStart
+            print(f"\n{Y}Run for: {ApplicationDuration:.2f} seconds{W}")
             print(G + "\nPress " + P + "[" + B + "q" + P + "]" + G + " to " + Y + "exit" + G + " or " + Y + "stop" + G + " or " + Y + "Quit" + G + " the session..." + W)
             print(G + "Press " + R + "[" + Y + "Ctrl" + W + " + " + Y + "C" + R + "]" + G + " to " + Y + "exit" + G + " or " + Y + "stop" + G + " the session..." + W)
-            print(D + "Or just close the window manually." + W)
+            print(D + "Or just close the window manually" + R + " X " + W)
 
             while True:
                 if keyboard.is_pressed('q') or keyboard.is_pressed('Ctrl') and keyboard.is_pressed('C'):
