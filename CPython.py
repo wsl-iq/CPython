@@ -15,6 +15,7 @@ import subprocess
 import ctypes
 import glob
 import shutil
+import platform
 from datetime import datetime
 from CIL.AscallArt import(
     START,
@@ -81,6 +82,7 @@ White = "\033[47m"        # White
 Orange = "\033[48;5;202m" # Orange
 Pink = "\033[48;5;198m"   # Pink
 
+
 def DateTime():
     try:
         now = datetime.now()
@@ -98,6 +100,35 @@ def DateTime():
         return DateDay
     except Exception as e:
         return str(e)
+
+def System():
+    system = platform.system()
+    if system == "Windows":
+        return "Windows" + 6*" "
+    elif system == "Linux":
+        return "Linux  " + 6*" "
+    elif system == "Darwin":
+        return "MacBook OS" + 3*" "
+
+def banner():
+    __Developer__ = "Mohammed Al-Baqer"
+    __Copyright__ = "Copyright (c) 2025"
+    print(rf"""
+    {Y}_________{B}                 __   /\                   {W}
+    {Y}\_   ___ \{B}______ ____ ___/  |_|  |__   ____   ____  {W}
+    {Y}/    \  \/{B}\____ \\   |  |   __\  |  \ / __ \ /    \ {W}
+    {Y}\     \____{B}  |_\ \\___  ||  | |      \  \_\ )   |  \{W}
+    {Y} \______  /{B}   ___// ____||__| |___|  /\____/|___|  /{W}
+    {Y}        \/{B}|__|    \/               \/            \/ {W}""")
+    AscallArt = R + " ● " + Y + "●" + G + " ● " + W
+    print(f"""
+    ┏───────────────────────────────────┓
+    ┃{AscallArt}                            ┃
+    ┣────────────┳──────────────────────┫
+    ┃{B} Developer  {W}│ {__Developer__}{W}    ┃
+    ┃{B} Copyright  {W}│ {__Copyright__}{W}   ┃
+    ┃{B} System     {W}│ {System()}{W}        ┃
+    ┗────────────┻──────────────────────┛""")
 
 class Main:
     def __init__(self):
@@ -123,16 +154,8 @@ class Main:
         try:
             sys.path.append(os.path.dirname(os.path.abspath(__file__)))
             subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
-            print(C + "Welcome! The application is starting..." + W)
+            banner()
             print(DateTime())
-            AscallArt = R + " ● " + Y + "●" + G + " ● " + W
-            print(f"""
-┏───────────────────────────────────┓
-┃{AscallArt}                            ┃
-┣────────────┳──────────────────────┫
-┃{B} Developer  {W}│ {__Developer__}{W}    ┃
-┃{B} Copyright  {W}│ {__Copyright__}{W}   ┃
-┗────────────┻──────────────────────┛""")
             ApplicationStart = time.time()
             
             os.system("python setup.py build_ext --inplace")
@@ -148,6 +171,25 @@ class Main:
             dll_path = os.path.abspath("mylib.dll")
             print(f"Created DLL at: {dll_path}")
             os.system(f'python dll.py')
+
+            print(f"""{W}
+┏━━ mylib.pyx               
+┃
+┣━━ mylib.c                 
+┃
+┗━━ Build/
+┃    ┗━ temp.win-amd64-cpython/
+┃    ┃     ┣━ mylib.obj               
+┃    ┃     ┣━ mylib.cp-win_amd64.exp  
+┃    ┃     ┗━ mylib.cp-win_amd64.lib  
+┃    ┃
+┃    ┗━ lib.win-amd64-cython/
+┃          ┗━ mylib.cp-win_amd64.pyd  
+┃
+┣━━ mylib.dll               
+┣━━ mylib.h                 
+┗━━ mylib.cp-win_amd64.pyd                                                                                       
+""")
 
             ApplicationDuration = time.time() - ApplicationStart
             print(f"\n{Y}Run for: {ApplicationDuration:.2f} seconds{W}")
