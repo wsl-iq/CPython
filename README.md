@@ -142,7 +142,26 @@ print(f"Created DLL at: {dll_path}")
 time.sleep(1)
 os.system(f'python dll.py')
 ```
+---
 
+```
+┏━━ mylib.pyx               
+┃
+┣━━ mylib.c                 
+┃
+┗━━ Build/
+┃    ┗━ temp.win-amd64-cpython/
+┃    ┃     ┣━ mylib.obj               
+┃    ┃     ┣━ mylib.cp-win_amd64.exp  
+┃    ┃     ┗━ mylib.cp-win_amd64.lib  
+┃    ┃
+┃    ┗━ lib.win-amd64-cython/
+┃          ┗━ mylib.cp-win_amd64.pyd  
+┃
+┣━━ mylib.dll               
+┣━━ mylib.h                 
+┗━━ mylib.cp-win_amd64.pyd 
+```
 ---
 
 | ![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white) | ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black) | ![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0) |
